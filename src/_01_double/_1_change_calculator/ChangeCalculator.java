@@ -30,4 +30,3 @@ double money = nickels + dimes + quarters;
 JOptionPane.showMessageDialog(null, "You have $" + money + ".");
 	}
 }
-
