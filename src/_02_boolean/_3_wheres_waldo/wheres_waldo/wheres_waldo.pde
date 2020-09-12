@@ -4,31 +4,38 @@
 	 * If you cannot play sound on this computer, set canPlaySounds to false.
 	 * If you are not sure, ask your teacher 
 	 * *****************/
-boolean canPlaySounds = true;
-
+boolean canPlaySounds = false;
+PImage waldo;
 void setup() {
   
   //Find a Where's Waldo picture and drop it into this sketch.     
-  PImage waldo = loadImage("waldo.jpg"); // Change this to match your file name.
+waldo = loadImage("waldo.jpg"); // Change this to match your file name.
   size(600, 400); 
   // Resize your waldo picture to the same size as the sketch
-  
+  waldo.resize(width,height);
   // Make the waldo image your sketch background
 
 }
 
 void draw() {
-
+background(waldo);
       // If the user presses the mouse .......
   
           // Use this print statement to help you find the location of Waldo to use in the code below
-          // println("X: " + mouseX + " Y: " + mouseY); 
+          println("X: " + mouseX + " Y: " + mouseY); 
     
           // Check if the location of the mouse is anywhere on the image of Waldo.
           // If it is, print “Waldo found!”  Use the text() command to write it on the sketch.
-          
+          if(mouseX>370&&mouseX<420&&mouseY>200&&mouseY<275){
+            fill(0,0,0);
+          text("Waldo found!", 280,350);
+          }
+          else{
+            fill(0,0,0);
+            text("Not here!", 280, 350);}
                 if (canPlaySounds) {
-                    // Use the playWhoohoo() method below. You can change the sound if you want 
+                    // Use the playWhoohoo() method below. You can change the sound if you want
+                    
                 } 
     
           // However, if the mouse is not on Waldo, print "Not here!" 
@@ -43,7 +50,6 @@ void draw() {
 /*********************  This code is needed to play sounds. ********************
               Remove the comment markers below, but DON'T CHANGE THE CODE */
               
-
 /*
 import ddf.minim.*;
 Minim minim = new Minim(this); 
